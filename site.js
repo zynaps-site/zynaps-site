@@ -4,25 +4,25 @@
   // App details in tab order. Edit file paths, sizes and notes here.
   const APPS = {
     // file, size and notes are filled in from the newest GitHub release (see below).
-    x:   { name: 'Synapse X',  file: 'https://github.com/DavidTG08/SynapseX-releases/releases/latest',   size: 'Windows installer',
+    x:   { name: 'Synapse X',  file: 'https://github.com/zynaps-site/SynapseX-releases/releases/latest',   size: 'Windows installer',
            cta: 'A pixel-perfect crosshair and 1,100+ custom cursors. Free for Windows 10 / 11.',
            notes: 'Synapse X 2.0.0 — 1,100+ editable cursors, Discord sign-in, and a crosshair that works everywhere.' },
     // file, size and notes are filled in from the newest GitHub release (see below).
-    y:   { name: 'Synapse Y',  file: 'https://github.com/DavidTG08/SynapseY-releases/releases/latest',   size: 'Windows installer',
+    y:   { name: 'Synapse Y',  file: 'https://github.com/zynaps-site/SynapseY-releases/releases/latest',   size: 'Windows installer',
            cta: 'Boost your WPM and climb the global leaderboard.',
            notes: 'Synapse Y 2.0.0 — Monkeytype-style scoring, themes, daily challenge and weak-key practice.' },
     // file, size and notes are filled in from the newest GitHub release (see below).
-    vpn: { name: 'SynapseVPN', file: 'https://github.com/DavidTG08/SynapseVPN-releases/releases/latest', size: 'Windows installer',
+    vpn: { name: 'SynapseVPN', file: 'https://github.com/zynaps-site/SynapseVPN-releases/releases/latest', size: 'Windows installer',
            cta: 'One-click VPN, threat protection, breach alerts and a gaming Speed optimizer. Free for Windows 10 / 11 and Android.',
            notes: 'SynapseVPN — see the latest release notes on GitHub.' },
     // file, size and notes are filled in from the newest GitHub release (see below).
-    waves: { name: 'SynapseWAVEs', file: 'https://github.com/DavidTG08/SynapseWAVEs-releases/releases/latest', size: 'Windows installer',
+    waves: { name: 'SynapseWAVEs', file: 'https://github.com/zynaps-site/SynapseWAVEs-releases/releases/latest', size: 'Windows installer',
            cta: 'An Audacity-style audio editor with AudioLab sound, clean mixing and loud exports. Free for Windows 10 / 11.',
            notes: 'SynapseWAVEs 1.0.0 — audio editor, mixer and 29 effects.' }
   };
 
   // Synapse X: always link the newest installer from GitHub Releases.
-  fetch('https://api.github.com/repos/DavidTG08/SynapseX-releases/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
+  fetch('https://api.github.com/repos/zynaps-site/SynapseX-releases/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
     .then(r => r.ok ? r.json() : Promise.reject(r.status))
     .then(release => {
       const exe = (release.assets || []).find(a => /\.exe$/i.test(a.name));
@@ -42,7 +42,7 @@
     .catch(() => { /* keep the link to the releases page */ });
 
   // Synapse Y: always link the newest installer from GitHub Releases.
-  fetch('https://api.github.com/repos/DavidTG08/SynapseY-releases/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
+  fetch('https://api.github.com/repos/zynaps-site/SynapseY-releases/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
     .then(r => r.ok ? r.json() : Promise.reject(r.status))
     .then(release => {
       const exe = (release.assets || []).find(a => /\.exe$/i.test(a.name));
@@ -62,7 +62,7 @@
     .catch(() => { /* keep the link to the releases page */ });
 
   // SynapseVPN: always link the newest installer from GitHub Releases.
-  fetch('https://api.github.com/repos/DavidTG08/SynapseVPN-releases/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
+  fetch('https://api.github.com/repos/zynaps-site/SynapseVPN-releases/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
     .then(r => r.ok ? r.json() : Promise.reject(r.status))
     .then(release => {
       const exe = (release.assets || []).find(a => /\.exe$/i.test(a.name));
@@ -81,7 +81,7 @@
     })
     .catch(() => { /* keep the link to the releases page */ });
   // SynapseWAVEs: always link the newest installer from GitHub Releases.
-  fetch('https://api.github.com/repos/DavidTG08/SynapseWAVEs-releases/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
+  fetch('https://api.github.com/repos/zynaps-site/SynapseWAVEs-releases/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
     .then(r => r.ok ? r.json() : Promise.reject(r.status))
     .then(release => {
       const exe = (release.assets || []).find(a => /\.exe$/i.test(a.name));
@@ -101,7 +101,7 @@
     .catch(() => { /* keep the link to the releases page */ });
   // SynapseVPN for Android: the newest APK (releases tagged android-v…, never marked "latest",
   // so the Windows download and the PC app's updater keep using the Windows release).
-  fetch('https://api.github.com/repos/DavidTG08/SynapseVPN-releases/releases?per_page=30', { headers: { Accept: 'application/vnd.github+json' } })
+  fetch('https://api.github.com/repos/zynaps-site/SynapseVPN-releases/releases?per_page=30', { headers: { Accept: 'application/vnd.github+json' } })
     .then(r => r.ok ? r.json() : Promise.reject(r.status))
     .then(list => {
       for (const release of list) {

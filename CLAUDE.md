@@ -7,7 +7,7 @@ Download hub for four apps: **Synapse X**, **Synapse Y**, **SynapseVPN** and **S
 - When you change `site.js`, bump the `?v=` date in its `<script src>` tag so browsers fetch the new copy.
 - Logo: `Gemini_Generated_Image_wgi2nnwgi2nnwgi2-Photoroom.jpg` (WebP data with transparency, kept under this exact name).
 - Hosted on **GitHub Pages** from the `main` branch. `CNAME` = `zynaps.site`, HTTPS enforced.
-- DNS at Namecheap: four A records to GitHub (185.199.108–111.153) and `www` CNAME to `davidtg08.github.io`.
+- DNS at Namecheap: four A records to GitHub (185.199.108–111.153) and `www` CNAME to `zynaps-site.github.io`.
 
 ## Deploying
 - Pushing to `main` updates https://zynaps.site within about a minute.
@@ -20,10 +20,10 @@ Download hub for four apps: **Synapse X**, **Synapse Y**, **SynapseVPN** and **S
   - home = silver (`--silver: #c4c9d1`), x = orange, y = purple, vpn = blue, waves = green (`#3cb54a`, same green as the app).
 - All text uses `--silver` (no pure white). The logo has a subtle rotating multi-color glow (`.logo-wrap::before`).
 - App details (download file, size, release note, CTA text) live in the `APPS` object in the script.
-- **Synapse Y downloads are live**: same approach as Synapse X, using the newest release of `DavidTG08/SynapseY-releases` (public, installers only; code is in the private `DavidTG08/synapse-y`). The script updates every `.js-y-file` link and `.js-y-version` label. The app's own auto-updater reads the same releases.
-- **Synapse X downloads are live**: same approach as SynapseVPN, using the newest release of `DavidTG08/SynapseX-releases` (public, installers only; code is in the private `DavidTG08/SynapseX`). The script updates every `.js-x-file` link and `.js-x-version` label. Publishing a new release there is all that's needed.
-- **SynapseVPN downloads are live**: the script asks the GitHub API for the newest release of `DavidTG08/SynapseVPN-releases` (public, installers only; the code repo may be private) and points every `.js-vpn-file` link at its `.exe` (version shown in `.js-vpn-version`). No site change is needed when a new SynapseVPN version is published. Falls back to the releases page.
-- **SynapseWAVEs downloads are live**: same approach, newest release of `DavidTG08/SynapseWAVEs-releases` (public, installers only; code is in the private `DavidTG08/SynapseWAVEs`). The script updates every `.js-waves-file` link and `.js-waves-version` label.
+- **Synapse Y downloads are live**: same approach as Synapse X, using the newest release of `zynaps-site/SynapseY-releases` (public, installers only; code is in the private `zynaps-site/synapse-y`). The script updates every `.js-y-file` link and `.js-y-version` label. The app's own auto-updater reads the same releases.
+- **Synapse X downloads are live**: same approach as SynapseVPN, using the newest release of `zynaps-site/SynapseX-releases` (public, installers only; code is in the private `zynaps-site/SynapseX`). The script updates every `.js-x-file` link and `.js-x-version` label. Publishing a new release there is all that's needed.
+- **SynapseVPN downloads are live**: the script asks the GitHub API for the newest release of `zynaps-site/SynapseVPN-releases` (public, installers only; the code repo may be private) and points every `.js-vpn-file` link at its `.exe` (version shown in `.js-vpn-version`). No site change is needed when a new SynapseVPN version is published. Falls back to the releases page.
+- **SynapseWAVEs downloads are live**: same approach, newest release of `zynaps-site/SynapseWAVEs-releases` (public, installers only; code is in the private `zynaps-site/SynapseWAVEs`). The script updates every `.js-waves-file` link and `.js-waves-version` label.
 - Synapse M (maps) was removed on 2026-10-27 at the owner's request; don't bring back the `/maps` app or the Synapse M tab.
 - "Feedback" (floating bottom-right button + footer link) opens a dialog (Good/Bad, message, optional email) that emails `support@zynaps.site` via FormSubmit (`formsubmit.co/ajax/...`). FormSubmit needs a one-time "Activate" click in the first email it sends to that address.
 - "Support" links open a contact menu (Gmail, Outlook, Yahoo, default app, copy address) for `support@zynaps.site`.
